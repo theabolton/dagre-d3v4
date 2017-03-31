@@ -131,9 +131,8 @@ if (debugAlignmentMatch) debugAlignment = debugAlignmentMatch[1];
 // Set up zoom support
 var svg = d3.select("svg"),
     inner = d3.select("svg g"),
-    zoom = d3.behavior.zoom().on("zoom", function() {
-      inner.attr("transform", "translate(" + d3.event.translate + ")" +
-                                  "scale(" + d3.event.scale + ")");
+    zoom = d3.zoom().on("zoom", function() {
+      inner.attr("transform", d3.event.transform);
     });
 svg.call(zoom);
 
