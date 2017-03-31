@@ -73,12 +73,11 @@ g.setEdge("C", "B", {
 });
 
 // Make the edge between A and D smoother. 
-// Available options (as of dagre-d3 0.5.0) for line interpolation curves are
-// 'linear' or 'basis', see https://github.com/d3/d3-shape#curves for more
-// information.
+// See https://github.com/d3/d3-shape#curves for more information on available
+// curves.
 g.setEdge("A", "D", {
   label: "line interpolation different",
-  lineCurve: 'basis' 
+  curve: d3.curveBasis
 });
 
 g.setEdge("E", "D", {});
