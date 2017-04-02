@@ -4,7 +4,7 @@
 <title>Dagre D3 Demo: Style Attributes</title>
 
 <link rel="stylesheet" href="demo.css">
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 <script src="../dagre-d3.js"></script>
 
 <h1>Dagre D3 Demo: Style Attributes</h1>
@@ -73,10 +73,11 @@ g.setEdge("C", "B", {
 });
 
 // Make the edge between A and D smoother. 
-// see available options for lineInterpolate here: https://github.com/mbostock/d3/wiki/SVG-Shapes#line_interpolate
+// See https://github.com/d3/d3-shape#curves for more information on available
+// curves.
 g.setEdge("A", "D", {
   label: "line interpolation different",
-  lineInterpolate: 'basis' 
+  curve: d3.curveBasis
 });
 
 g.setEdge("E", "D", {});
