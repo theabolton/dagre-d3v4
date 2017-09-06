@@ -9,7 +9,7 @@ This repository is a work-in-progress effort to update dagre-d3 to support D3
 version 4.
 
 Chris Pettitt's original, unmaintained dagre-d3 repository can be found
-[here](https://github.com/cpettitt/dagre), as can the original
+[here](https://github.com/cpettitt/dagre-d3), as can the original
 [wiki](https://github.com/cpettitt/dagre-d3/wiki).
 
 ## API Changes from dagre-d3 version 0.4.x to version 0.5.0
