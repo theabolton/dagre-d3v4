@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.7.1",
-    "browserify": "^10.2.0",
+    "browserify": "^14.4.0",
     "chai": "^1.9.2",
     "del": "^1.1.1",
     "gulp": "^3.9.1",
