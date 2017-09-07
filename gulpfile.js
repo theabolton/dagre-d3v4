@@ -11,7 +11,7 @@ var gulp = require("gulp");
 var gutil = require("gulp-util");
 var jshint = require("gulp-jshint");
 var jshintStylish = require("jshint-stylish");
-var karma = require("karma").server;
+var karma = require("karma");
 var merge = require("merge-stream");
 var prettyTime = require("pretty-hrtime");
 var rename = require("gulp-rename");
@@ -61,12 +61,11 @@ gulp.task("js:test", ["js:build"], function(cb) {
 });
 
 gulp.task("js:test:watch", ["js:build"], function(cb) {
-    karma.start({
+    new karma.Server({
         configFile: __dirname + "/karma.conf.js",
         singleRun: false,
         browsers: ["PhantomJS"]
-    });
-    cb();
+    }, cb).start();
 });
 
 gulp.task("core-js:build", function() {
@@ -134,7 +133,7 @@ function karmaSingleRun(conf, cb) {
         args.browsers = process.env.BROWSERS.split(",");
     }
 
-    karma.start(args, cb);
+    new karma.Server(args, cb).start();
 }
 
 function makeJsBundleTask(watch) {
