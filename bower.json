@@ -1,8 +1,8 @@
 {
-  "name": "dagre-d3",
+  "name": "dagre-d3v4",
   "version": "0.5.0-pre",
   "main": [
-    "dist/dagre-d3.core.js"
+    "dist/dagre-d3v4.core.js"
   ],
   "ignore": [
     ".*",
@@ -11,9 +11,9 @@
     "Makefile",
     "browser.js",
     "build/**",
-    "dist/dagre-d3.js",
-    "dist/dagre-d3.min.js",
-    "dist/dagre-d3.min.js.map",
+    "dist/dagre-d3v4.js",
+    "dist/dagre-d3v4.min.js",
+    "dist/dagre-d3v4.min.js.map",
     "dist/demo/**",
     "index.js",
     "karma*",

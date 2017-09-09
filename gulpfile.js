@@ -31,7 +31,7 @@ var DEMO_BUILD = BUILD_DIST_DIR + "/demo";
 
 gulp.task("demo:build", function() {
     return gulp.src(DEMO_SRC)
-        .pipe(replace("../" + BUILD_DIST_DIR + "/dagre-d3.js", "../dagre-d3.js"))
+        .pipe(replace("../" + BUILD_DIST_DIR + "/dagre-d3v4.js", "../dagre-d3v4.js"))
         .pipe(gulp.dest(DEMO_BUILD));
 });
 
@@ -39,7 +39,7 @@ gulp.task("demo:watch", ["demo:build"], function() {
     gulp.src(DEMO_SRC)
         .pipe(watch(DEMO_SRC), { verbose: true })
         .pipe(changed(DEMO_BUILD))
-        .pipe(replace("../" + BUILD_DIST_DIR + "/dagre-d3.js", "../dagre-d3.js"))
+        .pipe(replace("../" + BUILD_DIST_DIR + "/dagre-d3v4.js", "../dagre-d3v4.js"))
         .pipe(gulp.dest(DEMO_BUILD));
 });
 
@@ -69,7 +69,7 @@ gulp.task("js:test:watch", ["js:build"], function(cb) {
 });
 
 gulp.task("core-js:build", function() {
-    return makeBundleTask("./index.js", "dagre-d3.core.js", false, {
+    return makeBundleTask("./index.js", "dagre-d3v4.core.js", false, {
         standalone: "dagreD3",
         bundleExternal: false,
         debug: true
@@ -137,7 +137,7 @@ function karmaSingleRun(conf, cb) {
 }
 
 function makeJsBundleTask(watch) {
-    return makeBundleTask("./index.js", "dagre-d3.js", watch, {
+    return makeBundleTask("./index.js", "dagre-d3v4.js", watch, {
         standalone: "dagreD3",
         external: ["node_modules/d3/index.js", "node_modules/d3/build/d3.js"],
         debug: true
